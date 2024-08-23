@@ -4,7 +4,7 @@ import { SquarePlus } from "lucide-react";
 import { register } from "module";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
-import { updtApplication } from "@/lib/actions/application";
+//import { updtApplication } from "@/lib/actions/application";
 import { toast } from "react-toastify";
 import router from "next/router";
 
@@ -32,25 +32,25 @@ const UpdateForm = async ({ params }: Props) => {
     resolver: zodResolver(FormSchema),
   });
 
-  const updateApplication: SubmitHandler<UpdateInputType> = async (data) => {
-    console.log({ data });
+  // const updateApplication: SubmitHandler<UpdateInputType> = async (data) => {
+  //   console.log({ data });
 
-    try {
-      await updtApplication(params.id, data);
-      toast.success("Decision submitted");
-      router.push("/admin/adone");
-      //redirect("/home");
-    } catch (error) {
-      console.error({ error });
-    }
-  };
+  //   try {
+  //     await updtApplication(params.id, data);
+  //     toast.success("Decision submitted");
+  //     router.push("/admin/adone");
+  //     //redirect("/home");
+  //   } catch (error) {
+  //     console.error({ error });
+  //   }
+  // };
 
   return (
     <div>
       <form
-        onSubmit={handleSubmit(updateApplication, (errors) =>
-          console.log({ errors })
-        )}
+      // onSubmit={handleSubmit(updateApplication, (errors) =>
+      //   console.log({ errors })
+      // )}
       >
         <Select
           errorMessage={errors.status?.message}
