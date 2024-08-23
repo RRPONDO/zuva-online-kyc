@@ -1,6 +1,6 @@
 "use server";
 import { InputType } from "@/app/client/p1Application/page";
-import { UpdateInputType } from "@/app/admin/adone/application/[id]/page";
+//import { UpdateInputType } from "@/app/admin/adone/application/[id]/page";
 import prisma from "../prisma";
 import { Application } from "@prisma/client";
 
@@ -46,15 +46,15 @@ export async function savApplication(applicationData:InputType, filesUrl:string[
 
 }
 
-export async function updtApplication(applicationId:number, applicationData:UpdateInputType){
-    const result = await prisma.application.update({
-        where:{
-            id:applicationId,
-        },
-        data:{
-            status:applicationData.status,
-            comment:applicationData.comment
-        }
-    })
+// export async function updtApplication(applicationId:number, applicationData:UpdateInputType){
+//     const result = await prisma.application.update({
+//         where:{
+//             id:applicationId,
+//         },
+//         data:{
+//             status:applicationData.status,
+//             comment:applicationData.comment
+//         }
+//     })
 
-}
+// }
