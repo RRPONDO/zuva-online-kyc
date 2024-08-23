@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "../api/auth/[...nextauth]/options";
 import Image from "next/image";
 
 const ProfilePage = async () => {
@@ -10,7 +10,7 @@ const ProfilePage = async () => {
       <Image
         height={300}
         width={300}
-        src={user?.image ?? ""}
+        src={user?.email ?? ""}
         alt={user?.email ?? ""}
         className="rounded-full"
       />
