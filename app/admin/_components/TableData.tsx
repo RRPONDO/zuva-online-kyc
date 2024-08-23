@@ -114,7 +114,7 @@ const TableData = ({ application }: Props) => {
         </div>
         <div className="m-4">
           {application.files.map((item) => (
-            <a target="_blank" href={item.url}>
+            <a target="_blank" href={item.url} key={item.id}>
               <FileText />
               <span>View File</span>
             </a>
